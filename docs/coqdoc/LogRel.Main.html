@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="resources/coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="resources/coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resources/config.js"></script>
+<script type="text/javascript" src="resources/coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="../">Project Page</a>
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">LogRel.Main</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+<a id="lab106"></a><h1 class="section">Derive the main properties of typing.</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">LogRel.AutoSubst</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="LogRel.AutoSubst.core.html#"><span class="id" title="library">core</span></a> <a class="idref" href="LogRel.AutoSubst.unscoped.html#"><span class="id" title="library">unscoped</span></a> <a class="idref" href="LogRel.AutoSubst.Ast.html#"><span class="id" title="library">Ast</span></a> <a class="idref" href="LogRel.AutoSubst.Extra.html#"><span class="id" title="library">Extra</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">LogRel</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="LogRel.Utils.html#"><span class="id" title="library">Utils</span></a> <a class="idref" href="LogRel.BasicAst.html#"><span class="id" title="library">BasicAst</span></a> <a class="idref" href="LogRel.Computation.html#"><span class="id" title="library">Computation</span></a> <a class="idref" href="LogRel.Notations.html#"><span class="id" title="library">Notations</span></a> <a class="idref" href="LogRel.Context.html#"><span class="id" title="library">Context</span></a> <a class="idref" href="LogRel.NormalForms.html#"><span class="id" title="library">NormalForms</span></a> <a class="idref" href="LogRel.NormalEq.html#"><span class="id" title="library">NormalEq</span></a> <a class="idref" href="LogRel.Weakening.html#"><span class="id" title="library">Weakening</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="LogRel.DeclarativeTyping.html#"><span class="id" title="library">DeclarativeTyping</span></a> <a class="idref" href="LogRel.GenericTyping.html#"><span class="id" title="library">GenericTyping</span></a> <a class="idref" href="LogRel.DeclarativeInstance.html#"><span class="id" title="library">DeclarativeInstance</span></a> <a class="idref" href="LogRel.UntypedReduction.html#"><span class="id" title="library">UntypedReduction</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">LogRel</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="LogRel.Fundamental.html#"><span class="id" title="library">Fundamental</span></a> <a class="idref" href="LogRel.TypeConstructorsInj.html#"><span class="id" title="library">TypeConstructorsInj</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">LogRel</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="LogRel.Consequences.html#"><span class="id" title="library">Consequences</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Primitive</span> <span class="id" title="var">Projections</span>.<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Universe</span> <span class="id" title="var">Polymorphism</span>.<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="var">Polymorphic</span> <span class="id" title="keyword">Inductive</span> <span class="id" title="var">Cumulativity</span>.<br/>
+<span class="id" title="keyword">Set</span> <span class="id" title="keyword">Printing</span> <span class="id" title="var">Primitive</span> <span class="id" title="var">Projection</span> <span class="id" title="keyword">Parameters</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="LogRel.DeclarativeTyping.html#DeclarativeTypingData"><span class="id" title="module">DeclarativeTypingData</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="consistency" class="idref" href="#consistency"><span class="id" title="lemma">consistency</span></a> : <span class="id" title="keyword">forall</span> <a id="t:1" class="idref" href="#t:1"><span class="id" title="binder">t</span></a>, <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">[</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">|-[</span></a><a class="idref" href="LogRel.DeclarativeTyping.html#DeclarativeTypingData.de"><span class="id" title="definition">de</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="LogRel.Main.html#t:1"><span class="id" title="variable">t</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">:</span></a> <a class="idref" href="LogRel.AutoSubst.Ast.html#Core.tEmpty"><span class="id" title="constructor">tEmpty</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">intros</span> <span class="id" title="var">t</span> <span class="id" title="var">Ht</span>.<br/>
+<span class="id" title="var">now</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="LogRel.Consequences.html#consistency"><span class="id" title="lemma">consistency</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="keyword">Assumptions</span> <a class="idref" href="LogRel.Main.html#consistency"><span class="id" title="lemma">consistency</span></a>.<br/>
+
+<br/>
+<span class="comment">(*<br/>
+Axioms:<br/>
+run&nbsp;:&nbsp;term<br/>
+quote&nbsp;:&nbsp;term&nbsp;-&gt;&nbsp;nat<br/>
+run_subst&nbsp;:&nbsp;forall&nbsp;σ&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;term,&nbsp;run<span class="inlinecode">[σ]</span>&nbsp;=&nbsp;run<br/>
+run_spec_Some<br/>
+&nbsp;&nbsp;:&nbsp;forall&nbsp;(t&nbsp;:&nbsp;term)&nbsp;(u&nbsp;k&nbsp;v&nbsp;:&nbsp;nat),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;eval&nbsp;true&nbsp;(tApp&nbsp;t&nbsp;(qNat&nbsp;u))&nbsp;k&nbsp;=&nbsp;Some&nbsp;(qNat&nbsp;v)&nbsp;-&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinecode">[<span class="id" title="var">tApp</span></span> <span class="inlinecode">(<span class="id" title="var">tApp</span></span> <span class="inlinecode">(<span class="id" title="var">tApp</span></span> <span class="inlinecode"><span class="id" title="var">run</span></span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode">(<span class="id" title="tactic">quote</span></span> <span class="inlinecode"><span class="id" title="var">t</span>)))</span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode"><span class="id" title="var">u</span>))</span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode"><span class="id" title="var">k</span>)</span> <span class="inlinecode">⇶*</span> <span class="inlinecode"><span class="id" title="var">tSucc</span></span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode"><span class="id" title="var">v</span>)]</span><br/>
+run_spec_None<br/>
+&nbsp;&nbsp;:&nbsp;forall&nbsp;(t&nbsp;:&nbsp;term)&nbsp;(u&nbsp;k&nbsp;:&nbsp;nat),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;eval&nbsp;true&nbsp;(tApp&nbsp;t&nbsp;(qNat&nbsp;u))&nbsp;k&nbsp;=&nbsp;None&nbsp;-&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="inlinecode">[<span class="id" title="var">tApp</span></span> <span class="inlinecode">(<span class="id" title="var">tApp</span></span> <span class="inlinecode">(<span class="id" title="var">tApp</span></span> <span class="inlinecode"><span class="id" title="var">run</span></span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode">(<span class="id" title="tactic">quote</span></span> <span class="inlinecode"><span class="id" title="var">t</span>)))</span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode"><span class="id" title="var">u</span>))</span> <span class="inlinecode">(<span class="id" title="var">qNat</span></span> <span class="inlinecode"><span class="id" title="var">k</span>)</span> <span class="inlinecode">⇶*</span> <span class="inlinecode"><span class="id" title="var">tZero</span>]</span><br/>
+*)</span><br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="strong_normalization" class="idref" href="#strong_normalization"><span class="id" title="lemma">strong_normalization</span></a> : <span class="id" title="keyword">forall</span> <a id="da7a5918a812e0216f4a54d21f7406c4" class="idref" href="#da7a5918a812e0216f4a54d21f7406c4"><span class="id" title="binder">Γ</span></a> <a id="A:3" class="idref" href="#A:3"><span class="id" title="binder">A</span></a> <a id="t:4" class="idref" href="#t:4"><span class="id" title="binder">t</span></a>, <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">[</span></a><a class="idref" href="LogRel.Main.html#da7a5918a812e0216f4a54d21f7406c4"><span class="id" title="variable">Γ</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">|-[</span></a><a class="idref" href="LogRel.DeclarativeTyping.html#DeclarativeTypingData.de"><span class="id" title="definition">de</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="LogRel.Main.html#t:4"><span class="id" title="variable">t</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">:</span></a> <a class="idref" href="LogRel.Main.html#A:3"><span class="id" title="variable">A</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="LogRel.Utils.html#cd4bc1b07c8b3bdc9f3bbc7941b56107"><span class="id" title="notation">∑</span></a> <a id="v:5" class="idref" href="#v:5"><span class="id" title="binder">v</span></a><a class="idref" href="LogRel.Utils.html#cd4bc1b07c8b3bdc9f3bbc7941b56107"><span class="id" title="notation">,</span></a> <a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">[</span></a><a class="idref" href="LogRel.Main.html#t:4"><span class="id" title="variable">t</span></a> <a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">⇊</span></a> <a class="idref" href="LogRel.Main.html#v:5"><span class="id" title="variable">v</span></a><a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">]</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">intros</span>; <span class="id" title="var">now</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="LogRel.Consequences.html#strong_normalization"><span class="id" title="lemma">strong_normalization</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="keyword">Assumptions</span> <a class="idref" href="LogRel.Main.html#strong_normalization"><span class="id" title="lemma">strong_normalization</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="nat_canonicity_dred" class="idref" href="#nat_canonicity_dred"><span class="id" title="lemma">nat_canonicity_dred</span></a> {<a id="t:6" class="idref" href="#t:6"><span class="id" title="binder">t</span></a>} : <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">[</span></a><a class="idref" href="LogRel.Context.html#bfa9fae25f9bf698daae93f61b5313af"><span class="id" title="notation">ε</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">|-[</span></a><a class="idref" href="LogRel.DeclarativeTyping.html#DeclarativeTypingData.de"><span class="id" title="definition">de</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="LogRel.Main.html#t:6"><span class="id" title="variable">t</span></a> <a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">:</span></a> <a class="idref" href="LogRel.AutoSubst.Ast.html#Core.tNat"><span class="id" title="constructor">tNat</span></a><a class="idref" href="LogRel.Notations.html#43836cd8df19ac2db9f18b76cda6d142"><span class="id" title="notation">]</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="LogRel.Utils.html#cd4bc1b07c8b3bdc9f3bbc7941b56107"><span class="id" title="notation">∑</span></a> <a id="n:7" class="idref" href="#n:7"><span class="id" title="binder">n</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a><a class="idref" href="LogRel.Utils.html#cd4bc1b07c8b3bdc9f3bbc7941b56107"><span class="id" title="notation">,</span></a> <a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">[</span></a><a class="idref" href="LogRel.Main.html#t:6"><span class="id" title="variable">t</span></a> <a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">⇊</span></a> <a class="idref" href="LogRel.Computation.html#qNat"><span class="id" title="definition">qNat</span></a> <a class="idref" href="LogRel.Main.html#n:7"><span class="id" title="variable">n</span></a><a class="idref" href="LogRel.UntypedReduction.html#cb8739c4eaa7a29098fa7478ff748aaa"><span class="id" title="notation">]</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="tactic">intros</span>; <span class="id" title="var">now</span> <span class="id" title="tactic">eapply</span> <a class="idref" href="LogRel.Consequences.html#nat_canonicity_dred"><span class="id" title="lemma">nat_canonicity_dred</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Print</span> <span class="id" title="keyword">Assumptions</span> <a class="idref" href="LogRel.Main.html#nat_canonicity_dred"><span class="id" title="lemma">nat_canonicity_dred</span></a>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
