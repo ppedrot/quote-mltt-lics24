@@ -21,7 +21,7 @@ The coqdocjs subfolder is **not** part of this development, but an independent p
 Presentation
 =======
 
-This repo contains the formalisation work accompangy the paper *“Upon This Quote I Will Build My Church Thesis”*.
+This repo contains the formalisation work accompanying the paper *“Upon This Quote I Will Build My Church Thesis”*.
 
 The formalization is based on a [previous work](https://github.com/coqhott/logrel-coq/) by Adjej et al ([*Martin-Löf à la Coq*, CPP'24](https://arxiv.org/abs/2310.06376)), which itself follows a similar [Agda formalization](https://github.com/mr-ohman/logrel-mltt/) (described in [*Decidability of conversion for Type Theory in Type Theory*, 2018](https://dl.acm.org/doi/10.1145/3158111)). In order to avoid some work on the syntax, this project uses the [AutoSubst](https://github.com/uds-psl/autosubst-ocaml) project to generate syntax-related boilerplate.
 
@@ -39,7 +39,7 @@ For simplicity, the html documentation built using `coqdoc` is included in the a
 Browsing the development
 ==================
 
-The development, rendered using the [coqdoc](https://coq.inria.fr/refman/using/tools/coqdoc.html) utility, can be then browsed (as html files). To start navigating the sources, the best entry point is probably the [the table of content](https://anonymous.4open.science/w/quote-mltt/coqdoc/toc.html). A [short description of the file contents](https://anonymous.4open.science/w/quote-mltt/index.md) is also provided to make the navigation easier.
+The development, rendered using the [coqdoc](https://coq.inria.fr/refman/using/tools/coqdoc.html) utility, can be then browsed (as html files). To start navigating the sources, the best entry point is probably the [the table of content](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/toc.html). A [short description of the file contents](https://ppedrot.github.io/quote-mltt-lics24/index.md) is also provided to make the navigation easier.
 
 Files of interest
 =================
@@ -47,17 +47,17 @@ Files of interest
 Definitions
 --------
 
-The abstract syntax tree of terms is in [Ast](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.AutoSubst.Ast.html), the declarative typing and conversion predicates are in [DeclarativeTyping](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.DeclarativeTyping.html), reduction is in [UntypedReduction](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.UntypedReduction.html).
+The abstract syntax tree of terms is in [Ast](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.AutoSubst.Ast.html), the declarative typing and conversion predicates are in [DeclarativeTyping](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.DeclarativeTyping.html), reduction is in [UntypedReduction](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.UntypedReduction.html).
 
-The logical relation is defined with respect to a generic notion of typing, given in [GenericTyping](https://anonymous.4open.science/w/quote-mltt/LogRel.GenericTyping.html).
+The logical relation is defined with respect to a generic notion of typing, given in [GenericTyping](https://ppedrot.github.io/quote-mltt-lics24/LogRel.GenericTyping.html).
 
 Proofs
 ----------
 
-The toplevel results are exposed in a standalone file [Main](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.Main.html).
+The toplevel results are exposed in a standalone file [Main](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.Main.html).
 
-The logical relation is defined in [LogicalRelation](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.LogicalRelation.html). It is first defined component by component, before the components are all brought together by inductive `LR` at the end of the file. The fundamental lemma of the logical relation, saying that every well-typed term is reducible, is in [Fundamental](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.Fundamental.html).
+The logical relation is defined in [LogicalRelation](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.LogicalRelation.html). It is first defined component by component, before the components are all brought together by inductive `LR` at the end of the file. The fundamental lemma of the logical relation, saying that every well-typed term is reducible, is in [Fundamental](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.Fundamental.html).
 
-Injectivity and no-confusion of type constructor, and subject reduction, are proven in [TypeConstructorsInj](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.TypeConstructorsInj.html).
+Injectivity and no-confusion of type constructor, and subject reduction, are proven in [TypeConstructorsInj](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.TypeConstructorsInj.html).
 
-Consistency and canonicity are derived in [Consequences](https://anonymous.4open.science/w/quote-mltt/coqdoc/LogRel.Consequences.html).
+Consistency and canonicity are derived in [Consequences](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/LogRel.Consequences.html).

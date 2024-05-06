@@ -1,7 +1,7 @@
 Browsing the sources
 ============================
 
-The full table of content of the development is accessible [here](https://coqhott.github.io/logrel-coq/coqdoc/toc.html).
+The full table of content of the development is accessible [here](https://ppedrot.github.io/quote-mltt-lics24/coqdoc/toc.html).
 To complement it, here is a rough description of the content of every file.
 
 Utilities and AST
