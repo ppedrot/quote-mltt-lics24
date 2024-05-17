@@ -1,3 +1,10 @@
+Presentation
+=======
+
+This repo contains the formalisation work accompanying the paper [*“Upon This Quote I Will Build My Church Thesis”*](https://www.xn--pdrot-bsa.fr/articles/quotett.pdf).
+
+The formalization is based on a [previous work](https://github.com/coqhott/logrel-coq/) by Adjej et al ([*Martin-Löf à la Coq*, CPP'24](https://arxiv.org/abs/2310.06376)), which itself follows a similar [Agda formalization](https://github.com/mr-ohman/logrel-mltt/) (described in [*Decidability of conversion for Type Theory in Type Theory*, 2018](https://dl.acm.org/doi/10.1145/3158111)). In order to avoid some work on the syntax, this project uses the [AutoSubst](https://github.com/uds-psl/autosubst-ocaml) project to generate syntax-related boilerplate.
+
 TL;DR HOWTO INSTALL
 ===================
 
@@ -17,13 +24,6 @@ IMPORTANT NOTE
 ==============
 
 The coqdocjs subfolder is **not** part of this development, but an independent project vendored here for simplicity of the build process. The upstream repository can be found at https://github.com/coq-community/coqdocjs/.
-
-Presentation
-=======
-
-This repo contains the formalisation work accompanying the paper *“Upon This Quote I Will Build My Church Thesis”*.
-
-The formalization is based on a [previous work](https://github.com/coqhott/logrel-coq/) by Adjej et al ([*Martin-Löf à la Coq*, CPP'24](https://arxiv.org/abs/2310.06376)), which itself follows a similar [Agda formalization](https://github.com/mr-ohman/logrel-mltt/) (described in [*Decidability of conversion for Type Theory in Type Theory*, 2018](https://dl.acm.org/doi/10.1145/3158111)). In order to avoid some work on the syntax, this project uses the [AutoSubst](https://github.com/uds-psl/autosubst-ocaml) project to generate syntax-related boilerplate.
 
 Building
 ===========
